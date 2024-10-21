@@ -1,0 +1,191 @@
+<!-- Start writing your HTML code here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  p {
+    color: darkorange;
+  }
+  id {
+    color:darkred;
+  }
+ 
+ 
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: #333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 50px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  .profile {
+    width: 30%;
+    text-align: center;
+  
+  }
+  .profile img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease;
+  }
+  .profile img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.9);
+  }
+  .menu {
+    width: 60%;
+  }
+  ol {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  li {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+  li:hover {
+    background: rgba(255, 255, 255, 0.5);
+    animation: wave 1.5s ease-in-out infinite;
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.7);
+  }
+  li::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+    transform: translateX(-100%) rotate(45deg);
+    transition: transform 0.7s ease;
+  }
+  li:hover::before {
+    transform: translateX(100%) rotate(45deg);
+  }
+  .menu p {
+    margin-top: 10px;
+    font-size: 16px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  #expertise {
+    font-weight: bold;
+    color: rgba(86, 49, 123, 0.769);
+  }
+  #about {
+    color: rgba(86, 49, 123, 0.769);
+    font-weight: bold;
+  }
+  #contact {
+    font-weight: bold;
+    color: rgba(86, 49, 123, 0.769)
+  }
+  li.active p {
+    display: block;
+    opacity: 1;
+  }
+  footer {
+    text-align: center;
+    width: 100%;
+    padding: 0px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin-top:20
+
+  }
+  @keyframes wave {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+</style>
+</head>
+<body>
+<section class="container">
+  <!-- Profile Picture -->
+  <section class="profile">
+    <img src="file:///Users/mohamedbelhajmbarek/Desktop/file/image/swift.png" alt="Profile Picture">
+    <h2>Ben Mbarek</h2>
+  </section>
+
+  <!-- Navigation and Content -->
+  <section class="menu">
+    <ol>
+      <li id="about">
+       Bit About Me
+        <p>I'm passionate and dedicated developer with a growing expertise in multiple programming langages including<br>
+        Python, Swift, HTML, CSS AND JavaScript.<br>I enjoy crafting intuitive and efficient web and mobile application and deployement<br>
+      ,always focusing on clean code and user-friendly design.<br>With a constant drive to learn and improve, I am Excited to continue buidling<br>
+    innovative solutions and contributing to meaningful projects.</p>
+          
+      </li>
+      <li id="expertise">
+        Expertise
+        <p><strong>Web Development:</strong><br> Proficient in building responsive and dynamic website using HTML CSS and JavaScript<br>
+        for interactive functionality, and improving SEO performance<br>for better search engine visibility.<br>
+           <strong>App Development:</strong><br>Experinced in IOS/macOS app development alng with IDE Xcode , Github repository ,xcloud App Store connect test flight and app distribution<br>
+           <Strong>Deployement:</Strong>Knowledge in deployement web and app application, ensuring smooth rollout and integration across platforms.  </p>
+      </li>
+      <li id="contact">
+        Contact
+        <p>Feel free to reach out to collaborate<br>email:benmbarek17@yahoo.com<br>
+        Cell: +1 780 972 9378</p>
+      </li>
+    </ol>
+  </section>
+</section>
+
+<!-- Footer -->
+ 
+
+  <footer>
+   <p>My Portfolio © 2024</p>
+  </footer>
+ 
+
+<script>
+  const menuItems = document.querySelectorAll("li");
+  menuItems.forEach(item => {
+    item.addEventListener("click", () => {
+      // Hide others
+      menuItems.forEach(i => i.classList.remove("active"));
+      // Show the clicked one
+      item.classList.toggle("active");
+    });
+  });
+</script>
+</body>
+</html>
